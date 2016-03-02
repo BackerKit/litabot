@@ -1,3 +1,10 @@
-# litabot
+https://c9.io
 
-it works
+select "ruby!"
+
+
+git clone this repo
+
+Lita: https://www.lita.io/
+
+plugins: https://plugins.lita.io/
