@@ -1,8 +1,8 @@
-require_relative 'lita_loader'
+Dir[File.dirname(__FILE__) + "/custom_plugins/*.rb"].each {|file| require file }
 
 Lita.configure do |config|
   # The name your robot will use.
-  config.robot.name = "Juggala"
+  config.robot.name = "Sven"
 
   # The locale code for the language to use.
   # config.robot.locale = :en
