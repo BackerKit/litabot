@@ -3,7 +3,7 @@ module Lita
   module Handlers
     class Raven < Handler
 
-      route(/^kraww\s+(.+)/i, :greet, command: false, help: {
+      route(/^kraww\s+(.+)/i, :greet, command: true, help: {
         'kraww NAME' => 'krawws NAME'
       })
 
