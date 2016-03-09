@@ -2,7 +2,7 @@ module Lita
   module Handlers
     class Greeter < Handler
 
-      route(/^greet\s+(.+)/i, :greet, command: true, help: {
+      route(/^greet\s+(.+)/i, :greet, command: false, help: {
         'greet NAME' => 'says sup to NAME'
       })
 
