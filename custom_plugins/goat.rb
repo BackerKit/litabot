@@ -25,7 +25,7 @@ module Lita
         'yell NAME' => 'yells NAME'
       })
       
-      route(/^goatscream me/i, :bomb, command: true, help: {
+      route(/^goatscream me/i, :bomb, command: false, help: {
         'goatscream me' => 'shows you a random goat bro'
       })
 
