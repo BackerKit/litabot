@@ -4,7 +4,7 @@ module Lita
     class Dolphin < Handler
 
       route(/^shriek\s+(.+)/i, :shriek, command: true, help: {
-        'greet NAME' => 'says sup to NAME'
+        'shriek NAME' => 'shrieks at NAME'
       })
 
       def shriek(response)
