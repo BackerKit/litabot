@@ -14,11 +14,11 @@ module Lita
         
 
       route(/^flame\s+(.+)/i, :flame, command: false, help: {
-        'flame NAME' => 'flamess NAME'
+        'flame NAME' => 'flames NAME'
       })
 
-      route(/^flamebomb\s+(.+)/i, :bomb, command: false, help: {
-        'flamebomb' => 'LIGHTS THE WORLD ON FIRE'
+      route(/^flamebomb/i, :bomb, command: false, help: {
+        'flamebomb ANYTHING' => 'LIGHTS THE WORLD ON FIRE'
       })
       
       def flame(response)
