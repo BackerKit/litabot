@@ -27,7 +27,7 @@ module Lita
         'howl NAME' => 'howls NAME'
       })
       
-       route(/^wolfbomb/, :bomb, command: false, help: {
+       route(/wolfbomb/, :bomb, command: false, help: {
         'wolfbomb' => 'Shows you a lupine friend'
       })
 
