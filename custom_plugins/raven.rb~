@@ -20,7 +20,7 @@ module Lita
 	}
 
     route(/^kraww\s+(.+)/i, :kraww, command: true, help: {
-        'kraww NAME' => 'says krawws NAME'
+        'kraww NAME' => 'Raven warrior greets NAME'
       })
 	route(/^bird-warrior/i, :bomb, command: false, help: {
         'bird-warrior' => 'shows a badass avian warrior'
