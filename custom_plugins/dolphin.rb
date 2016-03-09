@@ -19,7 +19,7 @@ module Lita
       route(/^shriek\s+(.+)/i, :shriek, command: true, help: {
         'shriek NAME' => 'shrieks at NAME'
       })
-        route(/^dolphinbomb/, :dolphinbomb, command: true, help: {
+        route(/^dolphinbomb/, :dolphinbomb, command: false, help: {
         'dolphinbomb NAME' => 'shows you a magical friend'
       })
 
