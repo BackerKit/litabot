@@ -23,8 +23,8 @@ module Lita
       route(/^bark\s+(.+)/i, :bark, command: true, help: {
         'bark NAME' => 'barks NAME'
       })
-       route(/^bark-bomb-me/, :bomb, command: true, help: {
-        'bark-bomb-me NAME' => 'shows a random dog friend'
+       route(/^bark-bomb-me/, :bomb, command: false, help: {
+        'barkbombme NAME' => 'shows a random dog friend'
       })
 
       def bark(response)
