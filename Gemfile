@@ -7,6 +7,7 @@ gem "lita"
 
 gem "lita-slack"
 gem "lita-catgif"
+gem "lita-applause"
 # Uncomment to use the IRC adapter
 # gem "lita-irc"
 
