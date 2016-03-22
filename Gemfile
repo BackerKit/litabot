@@ -7,6 +7,7 @@ gem "lita"
 if ENV['SLACK_TOKEN']
 gem "lita-slack"
 end
+gem "lita-catgif"
 # Uncomment to use the IRC adapter
 # gem "lita-irc"
 
