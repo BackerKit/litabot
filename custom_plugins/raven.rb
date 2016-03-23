@@ -28,7 +28,6 @@ module Lita
 	route(/birdarmy$/i, :lonebomb, command: false, help: {
         'birdarmy' => 'shows an avian warrior in the bird army'
       })
-
 	route(/birdarmy\s+(\d)/i, :multibomb, command: false, help: {
         'birdarmy NUMBER' => 'shows some badass avian warriors in the bird army'
       })
