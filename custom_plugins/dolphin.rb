@@ -19,8 +19,8 @@ module Lita
       route(/^shriek\s+(.+)/i, :shriek, command: true, help: {
         'shriek NAME' => 'shrieks at NAME'
       })
-        route(/^dolphinbomb/, :dolphinbomb, command: false, help: {
-        'dolphinbomb NAME' => 'shows you a magical friend'
+        route(/^dolphinbomb\s(\d)/, :dolphinbomb_multi, command: false, help: {
+        'dolphinbomb NUMBER' => 'shows you a magical friend(s)'
       })
 
 
@@ -32,6 +32,11 @@ module Lita
       def dolphinbomb(response)
         response.reply(PICS.sample)
       end
+      def dolphinbomb_multi(response)
+        number =  response.matches[0][0].to_1
+        response.reply(PICS.sample(number))
+      end
+      
     end
 
     Lita.register_handler(Dolphin)

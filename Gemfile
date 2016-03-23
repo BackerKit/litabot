@@ -2,10 +2,12 @@ source "https://rubygems.org"
 
 gem "lita"
 
+gem "lita-catgif"
+gem "lita-applause"
 # Uncomment to use the HipChat adapter
 # gem "lita-hipchat"
 
-gem "lita-slack"
+#gem "lita-slack"
 gem "lita-catgif"
 gem "lita-applause"
 # Uncomment to use the IRC adapter

@@ -21,12 +21,15 @@ module Lita
             http://www.abandonstatusquo.com/wp-content/uploads/2015/11/screaming-goat.jpg
         }
 
-      route(/^yell\s+(.+)/i, :yell, command: true, help: {
+      route(/^yell\s+(.+)/i, :yell, command: false, help: {
         'yell NAME' => 'yells NAME'
       })
       
       route(/^goatscream me/i, :bomb, command: false, help: {
         'goatscream me' => 'shows you a random goat bro'
+      })
+      route(/^goatbomb\s(\d)/, :goatbomb_multi, command: false, help: {
+        'goatbomb NUMBER' => 'shows you a magical friend(s)'
       })
 
       def yell(response)
@@ -37,6 +40,10 @@ module Lita
       
       def bomb(response)
           response.reply(PICS.sample)
+      end
+      def goatbomb_multi(response)
+        number =  response.matches[0][0].to_i
+        response.reply(PICS.sample(number))
       end
       
     end
