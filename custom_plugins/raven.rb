@@ -25,6 +25,9 @@ module Lita
 	route(/birdwarrior/i, :bomb, command: false, help: {
         'birdwarrior' => 'shows a badass avian warrior'
       })
+	route(/birdarmy\s+(\d)/i, :multibomb, command: false, help: {
+        'birdarmy NUMBER' => 'shows hella badass avian warriors'
+      })
 
 	  def greet(response)
         name = response.matches[0][0]
@@ -34,6 +37,11 @@ module Lita
     
 	  def bomb(response)
 		response.reply(Picts.sample)
+	  end
+
+	  def multibomb(response)
+		number = response.matches[0][0].to_i
+		response.reply(Picts.sample(number))
 	  end
 	end
 
