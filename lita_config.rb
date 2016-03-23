@@ -19,8 +19,17 @@ Lita.configure do |config|
 
   # The adapter you want to connect with. Make sure you've added the
   # appropriate gem to the Gemfile.l
-  
-  config.robot.adapter = :shell
+
+  if ENV['PORT']
+    config.http.port = ENV["PORT"]
+  end
+    if ENV['SLACK_TOKEN']
+      config.robot.adapter = :slack
+      config.adapters.slack.token = ENV['SLACK_TOKEN']
+    else
+      config.robot.adapter = :shell
+    end
+
 
   ## Example: Set options for the chosen adapter.
   # config.adapter.username = "myname"
