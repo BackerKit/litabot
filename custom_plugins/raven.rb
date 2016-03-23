@@ -25,17 +25,39 @@ module Lita
 	route(/birdwarrior/i, :bomb, command: false, help: {
         'birdwarrior' => 'shows a badass avian warrior'
       })
+	route(/birdarmy$/i, :lonebomb, command: false, help: {
+        'birdarmy' => 'shows an avian warrior in the bird army'
+      })
+	route(/birdarmy\s+(\d)/i, :multibomb, command: false, help: {
+        'birdarmy NUMBER' => 'shows some badass avian warriors in the bird army'
+      })
+	route(/birdgang/i, :notbirds, command: false, help: {
+        'birdgang' => 'display rappers from harlem, not birds'
+      })
 
 	  def greet(response)
         name = response.matches[0][0]
-        
         response.reply("kraww #{name} kraww kraww")
       end
     
 	  def bomb(response)
 		response.reply(Picts.sample)
 	  end
+
+  	  def lonebomb(response)
+		response.reply(Picts.sample)
+	  end
+
+	  def multibomb(response)
+		number = response.matches[0][0].to_i
+		response.reply(Picts.sample(number))
+	  end
+
+	  def notbirds(response)
+        response.reply("https://d2d9cnk8doncvf.cloudfront.net/content-images/contentimage/no-slug/120e043d6c451e63e1a2141199f42ea4.jpg")
+      end
 	end
+  	
 
     Lita.register_handler(Raven)
   end
