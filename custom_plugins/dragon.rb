@@ -17,14 +17,31 @@ module Lita
         'flame NAME' => 'flames NAME'
       })
 
+
       route(/^flamebomb/i, :bomb, command: false, help: {
         'flamebomb ANYTHING' => 'LIGHTS THE WORLD ON FIRE'
+      })
+      
+      route(/^dragonflight\s(\d)/, :dragonflight, command: false, help: {
+        'dragonflight NUMBER' => 'summons a flight of dragons'  
       })
       
       def flame(response)
         name = response.matches[0][0]
         
         response.reply("The dragon takes a deep breath and bathes #{name} in flame.")
+      end
+      
+      def flame(response)
+        name = response.matches[0][0]
+        
+        response.reply("The dragon takes a deep breath and bathes #{name} in flame.")
+      end
+      
+      def dragonflight(response)
+        number = response.matches[0][0].to_i
+        response.reply("The dragons gather!")
+        response.reply(PICS.sample(number))
       end
       
       def bomb(response)

@@ -30,6 +30,11 @@ module Lita
        route(/wolfbomb/, :bomb, command: false, help: {
         'wolfbomb' => 'Shows you a lupine friend'
       })
+      
+      route(/wolfpack\s(\d)/, :multibomb, command: false, help: {
+        'wolfbomb NUMBER' => 'Shows you many a lupine friend'
+      })
+      
 
       def howl(response)
         name = response.matches[0][0]
@@ -38,6 +43,11 @@ module Lita
 
       def bomb(response)
           response.reply(PICS.sample)
+      end
+      
+      def multibomb(response)
+          number = response.matches[0][0].to_i
+          response.reply(PICS.sample(number))
       end
       
     end
