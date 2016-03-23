@@ -25,8 +25,8 @@ module Lita
 	route(/birdwarrior/i, :bomb, command: false, help: {
         'birdwarrior' => 'shows a badass avian warrior'
       })
-	route(/birdarmy\s+(\d)/i, :multibomb, command: false, help: {
-        'birdarmy NUMBER' => 'shows hella badass avian warriors'
+	route(/birdsquad\s+(\d)/i, :multibomb, command: false, help: {
+        'birdsquad NUMBER' => 'shows hella badass avian warriors'
       })
 
 	  def greet(response)
