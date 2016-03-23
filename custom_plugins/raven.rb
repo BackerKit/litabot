@@ -25,8 +25,12 @@ module Lita
 	route(/birdwarrior/i, :bomb, command: false, help: {
         'birdwarrior' => 'shows a badass avian warrior'
       })
+	route(/birdarmy$/i, :lonebomb, command: false, help: {
+        'birdarmy' => 'shows an avian warrior in the bird army'
+      })
+
 	route(/birdarmy\s+(\d)/i, :multibomb, command: false, help: {
-        'birdarmy NUMBER' => 'shows hella badass avian warriors'
+        'birdarmy NUMBER' => 'shows some badass avian warriors in the bird army'
       })
 	route(/birdgang/i, :notbirds, command: false, help: {
         'birdgang' => 'display rappers from harlem, not birds'
@@ -38,6 +42,10 @@ module Lita
       end
     
 	  def bomb(response)
+		response.reply(Picts.sample)
+	  end
+
+  	  def lonebomb(response)
 		response.reply(Picts.sample)
 	  end
 
